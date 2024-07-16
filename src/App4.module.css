@@ -1,0 +1,19 @@
+ul {
+    list-style: decimal;
+}
+
+span {
+    display: inline-block;
+}
+
+.s1 {    
+    width: 200px;
+}
+
+.s2 {
+    width: 100px;
+}
+
+.s3 {
+    width: 250px;
+}

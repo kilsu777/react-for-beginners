@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={URL + "/hello"} element={<h1>Hello</h1>} />
-        <Route path={URL + "/movie/:id"} element={<Detail />} />
+        <Route path="/hello" element={<h1>Hello</h1>} />
+        <Route path="/movie/:id" element={<Detail />} />
         <Route path={URL + "/"} element={<Home />} />
       </Routes>
     </Router>

@@ -11,11 +11,11 @@ function App() {
   // const URL = "";
   console.log(URL);
   return (
-    <Router>
+    <Router basename={URL}>
       <Routes>
         <Route path="/hello" element={<h1>Hello</h1>} />
         <Route path="/movie/:id" element={<Detail />} />
-        <Route path={URL + "/"} element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );

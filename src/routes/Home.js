@@ -17,11 +17,12 @@ function Home() {
   }
   useEffect(() => {
     if (!ref.current) {
+      console.log(`getMovies()`);
       ref.current = true;
       getMovies();
     }
   }, []);
-  console.log(movies);
+  // console.log(movies);
   return (
     <div className={styles.container}>
       {loading ? (
@@ -30,7 +31,9 @@ function Home() {
         </div>
       ) : (
         <div>
-          <h4>Total movies: {movies.length}</h4>
+          <center>
+            <h4>Total movies: {movies.length}</h4>
+          </center>
           <div className={styles.movies}>
             {movies.map((movie) => (
               <Movie

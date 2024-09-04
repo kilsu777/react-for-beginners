@@ -1,0 +1,7 @@
+{
+    "java.format.enabled": false,
+    "javascript.format.enable": false,
+    "typescript.format.enable": false,
+    "html.format.enable": true,
+    "json.format.enable": true
+}

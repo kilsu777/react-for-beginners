@@ -3,18 +3,17 @@ import Movie from "../components/Movie";
 import styles from "./Home.module.css";
 
 function Home() {
-  const APIURL = "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year&limit=50";
+  const APIURL =
+    "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year&limit=50";
   const ref = useRef(false);
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
     console.log("fetch");
-    const json = await (
-      await fetch(APIURL)
-    ).json();
+    const json = await (await fetch(APIURL)).json();
     setMovies(json.data.movies);
     setLoading(false);
-  }
+  };
   useEffect(() => {
     if (!ref.current) {
       console.log(`getMovies()`);
@@ -35,7 +34,7 @@ function Home() {
             <h4>Total movies: {movies.length}</h4>
           </center>
           <div className={styles.movies}>
-            {movies.map((movie) => (
+            {movies ? movies.map((movie) => (
               <Movie
                 key={movie.id}
                 id={movie.id}
@@ -45,7 +44,7 @@ function Home() {
                 summary={movie.summary}
                 genres={movie.genres}
               />
-            ))}
+            )) : null}
           </div>
         </div>
       )}
